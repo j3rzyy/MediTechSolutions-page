@@ -11,12 +11,15 @@ const svgImg = [
   { id: 3, url: img3, width: 1039, height: 67 },
 ];
 
-const Header = () => {
+const Header = ({ params }) => {
+  console.log(params)
   return (
+
     <div
       style={{
         display: "flex",
-        justifyContent: "flex-start",
+        alignSelf: 'flex-start',
+        width: '100%',  
       }}
     >
       <Image
@@ -25,7 +28,8 @@ const Header = () => {
         alt=""
         width={svgImg[0].width}
         height={svgImg[0].height}
-        style={{ zIndex: '5' }}
+        style={{ zIndex: '5', position: 'relative' }}
+        priority={false}
       />
       <Image
         className="item"
@@ -34,6 +38,7 @@ const Header = () => {
         width={svgImg[1].width}
         height={svgImg[1].height}
         style={{ position: "relative", left: '-650px', zIndex: '2' }}
+        priority={false}
       />
       <Image
         className="item"
@@ -41,7 +46,8 @@ const Header = () => {
         alt=""
         width={svgImg[2].width}
         height={svgImg[2].height}
-        style={{ position: "relative", left: '-1500px', zIndex: '1' }}
+        style={{ position: "relative", left: '-1500px', top: '-8px', zIndex: '1' }}
+        priority={false}
 
       />
     </div>

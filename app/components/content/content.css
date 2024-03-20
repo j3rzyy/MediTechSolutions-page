@@ -1,0 +1,9 @@
+.container {
+  margin-top: 50px;
+  background: white;
+  width: 1380px;
+  height: 2252px;
+  box-shadow: 7px 7px 20px #e6e6e6, -7px 7px 20px #e6e6e6, 7px -7px 20px #e6e6e6,
+    -7px -7px 20px #e6e6e6;
+}
+
