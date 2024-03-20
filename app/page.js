@@ -1,12 +1,12 @@
-import Image from "next/image";
-import './style.css'
-import Header from "./components/header";
+import "./style.css";
+import Header from "./components/header/header";
+import MainPart from "./components/main/main";
 
 export default function Home() {
   return (
     <div className="main-container">
       <Header />
-      <h1>Main str</h1>
+      <MainPart />
     </div>
   );
 }

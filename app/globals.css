@@ -4,7 +4,6 @@
 }
 
 body {
-  height: 100vh;
-  background-image: linear-gradient(to bottom, #FFFFFF, #D8EFFF);
-  color: black
+  background-image: linear-gradient(to bottom, #ffffff, #d8efff);
+  color: black;
 }
