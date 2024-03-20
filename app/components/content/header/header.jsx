@@ -12,9 +12,9 @@ const Header = ({ text }) => {
           position: "absolute",
           zIndex: "2",
           marginTop: "20px",
-          marginLeft: "60px",
+          marginLeft: "45px",
           fontSize: "40px",
-          fontWeight: "800px",
+          fontWeight: "900px",
         }}
       >
         {text}

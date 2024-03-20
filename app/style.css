@@ -1,8 +1,5 @@
 .main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 1px solid red;
   padding-bottom: 100px;
 }
