@@ -14,7 +14,7 @@ const Header = ({ text }) => {
           marginTop: "20px",
           marginLeft: "45px",
           fontSize: "40px",
-          fontWeight: "900px",
+          fontWeight: "bold",
         }}
       >
         {text}

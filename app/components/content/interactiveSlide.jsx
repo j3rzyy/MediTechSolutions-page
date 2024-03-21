@@ -66,21 +66,20 @@ const InteractiveSlide = () => {
     // </div>
     <div
       style={{
-        width: "1290px",
         border: "solid 1px #01457A",
+        boxShadow:
+          "7px 7px 20px #e6e6e6, -7px 7px 20px #e6e6e6, 7px -7px 20px #e6e6e6,-7px -7px 20px #e6e6e6",
         borderRadius: "10px",
         margin: "45px",
-        padding: '45px',
+        padding: "40px",
 
         display: "flex",
         justifyContent: "space-around",
       }}
     >
-      <Image src={vec} width={80} height={80} style={{flex: '1'}} />
+      <Image src={vec} width={80} height={80} style={{ flex: "1" }} />
 
-      <div
-        style={{ position: "relative", display: 'flex',flex: '3' }}
-      >
+      <div style={{ position: "relative", display: "flex", flex: "3", marginLeft: '30px' }}>
         <Image
           src={arrow_loop}
           width={297}
@@ -98,6 +97,7 @@ const InteractiveSlide = () => {
             fontSize: "25px",
             width: "250px",
             position: "absolute",
+            fontWeight: 'bold'
           }}
         >
           ХОБЛ болеют преимущественно мужчины?
@@ -105,14 +105,28 @@ const InteractiveSlide = () => {
       </div>
 
       <div
-        style={{
-          fontSize: "",
-          flex: '5'
-        }}
+        style={{ position: "relative", display: "flex", marginLeft: "30px" }}
       >
-        В десятилетнем исследовании «Генетическая эпидемиология ХОБЛ» (COPDGene)
-        среди пациентов с ХОБЛ, диагностированной до 55 лет, было выявлено
-        преобладание...
+        <div
+          style={{
+            fontSize: "23px",
+            flex: "7",
+            zIndex: "1",
+          }}
+        >
+          В десятилетнем исследовании «Генетическая эпидемиология ХОБЛ»
+          (COPDGene) среди пациентов с ХОБЛ, диагностированной до 55 лет, было
+          выявлено преобладание...
+        </div>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            zIndex: "3",
+            boxShadow: "inset 0px -39px 20px white",
+          }}
+        ></div>
       </div>
     </div>
   );
