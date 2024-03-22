@@ -5,16 +5,18 @@ import React, { useEffect, useState } from "react";
 import vec from "../../../public/Group2.svg";
 import arrow_loop from "../../../public/Vector49.svg";
 import arrow_main from "../../../public/Vector50.svg";
-import Modal from './Modal.jsx'
+import Modal from './modal/Modal.jsx'
 
 
-const InteractiveSlide = () => {
+const ModalItem = ({ props }) => {
 
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
     setModal(!modal);
   };
+
+  console.log(props.item1)
 
   return (
     <>
@@ -90,4 +92,4 @@ const InteractiveSlide = () => {
   );
 };
 
-export default InteractiveSlide;
+export default ModalItem;

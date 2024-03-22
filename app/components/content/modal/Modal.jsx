@@ -1,5 +1,5 @@
 import "./modal.css";
-import diagram from "../../../public/Diagram1.png";
+import diagram from "../../../../public/Diagram1.png";
 import { useEffect, useState } from "react";
 
 
