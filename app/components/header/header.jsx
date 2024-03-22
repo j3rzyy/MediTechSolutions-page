@@ -12,7 +12,7 @@ const svgImg = [
 ];
 
 const Header = ({ params }) => {
-  console.log(params)
+  // console.log(params)
   return (
 
     <div
