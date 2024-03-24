@@ -2,24 +2,9 @@
   margin: 0;
   padding: 0;
   color: #01457a;
-  font-family: "Century Gothic";
 }
 
 body {
-  background-image: linear-gradient(to bottom, #ffffff, #d8efff);
+  background: linear-gradient(#ffffff, #d8efff);
   color: black;
-}
-
-@font-face {
-  font-family: "Century Gothic";
-  src: url(../Century_Gothic/centurygothic.ttf) format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Century Gothic";
-  src: url(../Century_Gothic/centurygothic_bold.ttf) format("truetype");
-  font-style: normal;
-  font-weight: bold;
 }

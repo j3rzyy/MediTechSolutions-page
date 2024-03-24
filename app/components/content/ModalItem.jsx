@@ -1,14 +1,11 @@
-"use client"
-
-import Image from "next/image";
+"use client";
 import React, { useEffect, useState } from "react";
-import vec from "../../../public/Group2.svg";
-import arrow_loop from "../../../public/Vector49.svg";
-import arrow_main from "../../../public/Vector50.svg";
-import Modal from './modal/Modal.jsx'
+import Image from "next/image";
+import Modal from "./modal/Modal.jsx";
+import style from "./modalItem.module.css";
 
-
-const ModalItem = ({ props }) => {
+const ModalItem = (props) => {
+  const data = props.data;
 
   const [modal, setModal] = useState(false);
 
@@ -16,78 +13,45 @@ const ModalItem = ({ props }) => {
     setModal(!modal);
   };
 
-  console.log(props.item1)
+  // console.log(data.icon);
 
   return (
     <>
-      <div
-        style={{
-          border: "solid 1px #01457A",
-          boxShadow:
-            "7px 7px 20px #e6e6e6, -7px 7px 20px #e6e6e6, 7px -7px 20px #e6e6e6,-7px -7px 20px #e6e6e6",
-          borderRadius: "10px",
-          margin: "45px",
-          padding: "40px",
+      <div className={style.container} onClick={toggleModal}>
+        <Image
+          priority={false}
+          alt={data.icon.src}
+          src={data.icon}
+          max-width={data.icon.width}
+          max-height={data.icon.height}
+        />
 
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-        onClick={toggleModal}
-      >
-        <Image src={vec} width={80} height={80} style={{ flex: "1" }} />
-
-        <div style={{ position: "relative", display: "flex", flex: "3", marginLeft: '30px' }}>
+        <div className={style.arrowWrap}>
           <Image
-            src={arrow_loop}
-            width={297}
-            height={116}
+            priority={false}
+            alt={data.arrowIcon1.src}
+            src={data.arrowIcon1}
+            max-width={data.arrowIcon1.width}
+            max-height={data.arrowIcon1.height}
             style={{ position: "relative", zIndex: "1" }}
           />
           <Image
-            src={arrow_main}
-            width={295}
-            height={115}
+            priority={false}
+            alt={data.arrowIcon2.src}
+            src={data.arrowIcon2}
+            max-width={data.arrowIcon1.width}
+            max-height={data.arrowIcon1.height}
             style={{ position: "absolute", left: "0px" }}
           />
-          <div
-            style={{
-              fontSize: "25px",
-              width: "250px",
-              position: "absolute",
-              fontWeight: 'bold'
-            }}
-          >
-            ХОБЛ болеют преимущественно мужчины?
-          </div>
+          <div className={style.arrowText}>{data.text1}</div>
         </div>
 
-        <div
-          style={{ position: "relative", display: "flex", marginLeft: "30px" }}
-        >
-          <div
-            style={{
-              fontSize: "23px",
-              flex: "7",
-              zIndex: "1",
-            }}
-          >
-            В десятилетнем исследовании «Генетическая эпидемиология ХОБЛ»
-            (COPDGene) среди пациентов с ХОБЛ, диагностированной до 55 лет, было
-            выявлено преобладание...
-          </div>
-          <div
-            style={{
-              width: "100%",
-              height: "92%",
-              position: "absolute",
-              zIndex: "3",
-              boxShadow: "inset 0px -39px 15px white",
-            }}
-          ></div>
+        <div className={style.textWrap}>
+          <div className={style.blockText}>{data.text2}</div>
+          <div className={style.blockShadow}></div>
         </div>
-
       </div>
-      <Modal modal={modal} setModal={setModal} />
+      <Modal modal={modal} setModal={setModal} content={data.content} />
     </>
   );
 };

@@ -1,5 +1,10 @@
 import "./globals.css";
+import { Noto_Sans } from "next/font/google";
 
+const notoSans = Noto_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -9,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body className={notoSans.className}>{children}</body>
     </html>
   );
 }

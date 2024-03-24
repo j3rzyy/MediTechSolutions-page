@@ -1,30 +1,33 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import vec from "../../../../public/Vector48.svg";
 import Image from "next/image";
+import styles from "./header.module.css";
+
+// const useWindowSize = () => {
+//   const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
+
+//   useEffect(() => {
+//     const resizeHandler = () => setSize([window.innerWidth, window.innerHeight]);
+//     window.addEventListener('resize', resizeHandler);
+//     return () => window.removeEventListener('resize', resizeHandler);
+//   }, []);
+
+//   return size;
+// };
 
 const Header = ({ text }) => {
+  // const [width, height] = useWindowSize();
   return (
-    <div style={{ display: "flex", height: "110px", width: "1335px" }}>
-      <div
-        style={{
-          width: "1335",
-          height: "110",
-          position: "absolute",
-          zIndex: "2",
-          marginTop: "20px",
-          marginLeft: "45px",
-          fontSize: "40px",
-          fontWeight: "bold",
-        }}
-      >
-        {text}
-      </div>
+    <div className={styles.wrap}>
+      <div className={styles.text}>{text}</div>
       <Image
         src={vec}
-        alt=""
-        width={1335}
-        height={110}
-        style={{ zIndex: "1 ", position: "relative" }}
+        alt={vec.src}
+        width={vec.width}
+        height={vec.height}
+        className={styles.pic}
         priority={false}
       />
     </div>
