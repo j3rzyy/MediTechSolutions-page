@@ -18,6 +18,11 @@
   position: relative;
 }
 
+.Image {
+  max-width: 1335px;
+  min-width: 800px;
+}
+
 @font-face {
   font-family: "Century Gothic";
   src: url(../../../../Century_Gothic/centurygothic.ttf) format("truetype");

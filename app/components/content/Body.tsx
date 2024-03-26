@@ -1,6 +1,6 @@
 "use client";
 import styles from "./body.module.css";
-import Card from "../card/Card";
+import Card from "./card/Card";
 import arrowImg from "../../../public/Group8.svg";
 
 import imgCard1 from "../../../public/Group7_1.svg";
@@ -50,15 +50,15 @@ const Body = () => {
       <div className={styles.banner2}>
         <h1 className={styles.text2}>{header2}</h1>
         <div className={styles.wrap}>
-          <div className={styles.cardType1}>
-            <Card data={cardInfo[0]} />
-          </div>
-          <div className={styles.cardType1}>
-            <Card data={cardInfo[1]} />
-          </div>
-          <div className={styles.cardType1}>
-            <Card data={cardInfo[2]} />
-          </div>
+          {cardInfo.map((el) => {
+            if (el.icon) {
+              return (
+                <div className={styles.cardType1}>
+                  <Card data={el} />
+                </div>
+              );
+            }
+          })}
         </div>
 
         <div className={styles.wrapArrow}>
@@ -71,12 +71,15 @@ const Body = () => {
         </div>
 
         <div className={styles.wrap}>
-          <div className={styles.cardType2}>
-            <Card data={cardInfo[3]} />
-          </div>
-          <div className={styles.cardType2}>
-            <Card data={cardInfo[4]} />
-          </div>
+          {cardInfo.map((el) => {
+            if (!el.icon) {
+              return (
+                <div className={styles.cardType2}>
+                  <Card data={el} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     </div>

@@ -1,54 +1,46 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
 // import './style.css'
 import img1 from "../../../public/Vector45.svg";
 import img2 from "../../../public/Vector46.svg";
 import img3 from "../../../public/Vector47.svg";
-
-const svgImg = [
-  { id: 1, url: img1, width: 1247, height: 78 },
-  { id: 2, url: img2, width: 939, height: 69 },
-  { id: 3, url: img3, width: 1039, height: 67 },
-];
+import { getWindowSize } from "../getWindowSize";
 
 const Header = ({ params }) => {
+  const [width, height] = getWindowSize();
+
   // console.log(params)
   return (
-
     <div
       style={{
         display: "flex",
-        alignSelf: 'flex-start',
-        width: '100%',  
+        justifyContent: "flex-start",
       }}
     >
       <Image
         className="item"
-        src={svgImg[0].url}
-        alt=""
-        width={svgImg[0].width}
-        height={svgImg[0].height}
-        style={{ zIndex: '5', position: 'relative' }}
+        src={img1}
+        alt={img1.src}
+        width={0.6 * width}
+        style={{ zIndex: "3", position: "relative", maxWidth: '3000px', maxHeight: "110px" }}
         priority={false}
       />
       <Image
         className="item"
-        src={svgImg[1].url}
-        alt=""
-        width={svgImg[1].width}
-        height={svgImg[1].height}
-        style={{ position: "relative", left: '-650px', zIndex: '2' }}
+        src={img2}
+        alt={img2.src}
+        width={0.4 * width}
+        style={{ position: "absolute", left: `${width * 0.3}px`, zIndex: "2", maxWidth: '1000px', maxHeight: "69px" }}
         priority={false}
       />
       <Image
         className="item"
-        src={svgImg[2].url}
-        alt=""
-        width={svgImg[2].width}
-        height={svgImg[2].height}
-        style={{ position: "relative", left: '-1500px', top: '-8px', zIndex: '1' }}
+        src={img3}
+        alt={img3.src}
+        width={0.35 * width}
+        style={{ position: "absolute", left: `${width * 0.41}px`, zIndex: "1", maxWidth: '800px', maxHeight: "67px" }}
         priority={false}
-
       />
     </div>
   );
