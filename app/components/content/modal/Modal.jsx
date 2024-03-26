@@ -1,6 +1,4 @@
 import styles from "./modal.module.css";
-import diagram from "../../../../public/Diagram1.png";
-import { useEffect, useState } from "react";
 
 const Modal = ({ modal, setModal, content }) => {
   const toggleModal = () => {

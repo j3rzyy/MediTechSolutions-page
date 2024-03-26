@@ -1,13 +1,18 @@
+"use clinet";
 import { useEffect, useState } from "react";
 
 export const getWindowSize = () => {
-  const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
+  const [size, setSize] = useState([]);
 
   useEffect(() => {
-    const resizeHandler = () =>
+    if (typeof window !== "undefined") {
       setSize([window.innerWidth, window.innerHeight]);
-    window.addEventListener("resize", resizeHandler);
-    return () => window.removeEventListener("resize", resizeHandler);
+
+      const resizeHandler = () =>
+        setSize([window.innerWidth, window.innerHeight]);
+      window.addEventListener("resize", resizeHandler);
+      return () => window.removeEventListener("resize", resizeHandler);
+    }
   }, []);
 
   return size;

@@ -23,7 +23,6 @@ const Header = ({ text }) => {
       ) : <Image
         src={vec}
         alt={vec.src}
-        width={950}
         className={styles.pic}
         priority={false}
         style={{ maxWidth: "1335px", maxHeight: "110px" }}

@@ -13,17 +13,27 @@ const ModalItem = (props) => {
     setModal(!modal);
   };
 
-  // console.log(data.icon);
-
   return (
-    <>
-      <div className={style.container} onClick={toggleModal}>
+    <div style={{ position: "relative" }}>
+      <Image
+        key={data.clickIcon.src}
+        priority={false}
+        alt={data.clickIcon.src}
+        src={data.clickIcon}
+        style={{
+          position: "absolute",
+          right: "2%",
+          top: "-10%",
+          cursor: "pointer",
+        }}
+        onClick={toggleModal}
+      />
+
+      <div className={style.container}>
         <Image
           priority={false}
           alt={data.icon.src}
           src={data.icon}
-          max-width={data.icon.width}
-          max-height={data.icon.height}
         />
 
         <div className={style.arrowWrap}>
@@ -31,16 +41,12 @@ const ModalItem = (props) => {
             priority={false}
             alt={data.arrowIcon1.src}
             src={data.arrowIcon1}
-            max-width={data.arrowIcon1.width}
-            max-height={data.arrowIcon1.height}
             style={{ position: "relative", zIndex: "1" }}
           />
           <Image
             priority={false}
             alt={data.arrowIcon2.src}
             src={data.arrowIcon2}
-            max-width={data.arrowIcon1.width}
-            max-height={data.arrowIcon1.height}
             style={{ position: "absolute", left: "0px" }}
           />
           <div className={style.arrowText}>{data.text1}</div>
@@ -52,7 +58,7 @@ const ModalItem = (props) => {
         </div>
       </div>
       <Modal modal={modal} setModal={setModal} content={data.content} />
-    </>
+    </div>
   );
 };
 
