@@ -1,0 +1,22 @@
+.container {
+  height: 608px;
+  width: 410px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: linear-gradient(0.25turn, #ffffff, #d8efff);
+  box-shadow: 7px 7px 15px #8ea0ad53, -7px 7px 15px #8ea0ad53,
+    7px -7px 15px #8ea0ad53, -7px -7px 15px #8ea0ad53;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 22px;
+  text-align: center;
+  gap: 15px;
+}
+
+.text {
+  margin-top: 15px;
+}
